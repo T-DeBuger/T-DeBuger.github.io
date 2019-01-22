@@ -43,7 +43,7 @@ $(window).on('load', function() {
 
 
 (function($){
-
+	
 	/*------------------
 		Navigation
 	--------------------*/
@@ -69,6 +69,11 @@ $(window).on('load', function() {
 		header_height =  hero_h - body_h;
 
 	$(window).on('scroll resize',function(e) {
+		if($("#barUl li:first").hasClass("current")){
+			$('#bar').hide();
+		}else{
+			$('#bar').show();
+		}
 		if ($(this).scrollTop() > header_height) {
 			$('.hero-content').addClass('sticky');
 		}else{
