@@ -3034,60 +3034,56 @@
               <div class="sect5">
                 <h6 id="_响应_200">响应 200</h6>
                 <div class="listingblock">
-                  <div class="content">
-
-                  	<pre
-                  	  class="CodeRay highlight"><code data-lang="json"><span class="string"><span class="delimiter">&quot;</span><span class="content">object</span><span class="delimiter">&quot;</span></span></code></pre>
-
-                    <!-- <pre class="CodeRay highlight"><code data-lang="json">{
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
   <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">boothList</span><span class="delimiter">&quot;</span></span> : [
-	  {
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">177007</span>, <span class="notes">// 商位ID</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothmodel</span><span class="delimiter">&quot;</span></span> : <span class="string">"B"</span>, <span class="notes">// A/B摊</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"102440"</span>, <span class="notes">// 商位号(不含A/B摊)</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">merchantType</span><span class="delimiter">&quot;</span></span> : <span class="string">"0"</span>, <span class="notes">// 人员类型_code</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">merchantTypeStr</span><span class="delimiter">&quot;</span></span> : <span class="string">"使用权人"</span>, <span class="notes">// 人员类型</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">subfloor</span><span class="delimiter">&quot;</span></span> : <span class="string">"2"</span>, <span class="notes">// 楼层</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">submarket</span><span class="delimiter">&quot;</span></span> : <span class="string">"1001"</span>, <span class="notes">// 市场_code</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">submarketStr</span><span class="delimiter">&quot;</span></span> : <span class="string">""</span>, <span class="notes">// 市场</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothLoanInfoVO</span><span class="delimiter">&quot;</span></span> : {
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">beginusagedate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20160106</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothPrice</span><span class="delimiter">&quot;</span></span> : <span class="integer">460000</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">bootharea</span><span class="delimiter">&quot;</span></span> : <span class="integer">7</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothclass</span><span class="delimiter">&quot;</span></span> : <span class="integer">17</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="string">""</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothmodel</span><span class="delimiter">&quot;</span></span> : <span class="string">"102440B"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="integer">267</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothusagekind</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">boothusagetype</span><span class="delimiter">&quot;</span></span> : <span class="string">"30"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">creidtscore</span><span class="delimiter">&quot;</span></span> : <span class="integer">20210105</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">endusagedate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20210105</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">endusetime</span><span class="delimiter">&quot;</span></span> : <span class="string">"330724197611260424"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">idcard</span><span class="delimiter">&quot;</span></span> : <span class="string">"0"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">islocked</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimit</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimitLast</span><span class="delimiter">&quot;</span></span> : <span class="string">"徐换新"</span>, <span class="notes">// 名称</span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">mname</span><span class="delimiter">&quot;</span></span> : <span class="string">"15657930506"</span>, <span class="notes">// 手机号</span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">mobile</span><span class="delimiter">&quot;</span></span> : <span class="string">"zy-onccc"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">remark</span><span class="delimiter">&quot;</span></span> : <span class="integer">20170720</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">sealbegindate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20180720</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">sealenddate</span><span class="delimiter">&quot;</span></span> : <span class="string">"1"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">status</span><span class="delimiter">&quot;</span></span> : <span class="string">"三单元(459319)"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">subbolck</span><span class="delimiter">&quot;</span></span> : <span class="string">"2"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">subfloor</span><span class="delimiter">&quot;</span></span> : <span class="integer">116</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">subindustry</span><span class="delimiter">&quot;</span></span> : <span class="string">"1001"</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">submarket</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">sumrentcount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">sumrentday</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// </span>
-		  <span class="key"><span class="delimiter">&quot;</span><span class="content">sumtransfercount</span><span class="delimiter">&quot;</span></span> : <span class="integer">18116</span><span class="notes">// </span>
-		}
-	  }
+  	  {
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">177007</span>, <span class="notes">// 商位ID</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothmodel</span><span class="delimiter">&quot;</span></span> : <span class="string">"B"</span>, <span class="notes">// A/B摊</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"102440"</span>, <span class="notes">// 商位号(不含A/B摊)</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">merchantType</span><span class="delimiter">&quot;</span></span> : <span class="string">"0"</span>, <span class="notes">// 人员类型_code</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">merchantTypeStr</span><span class="delimiter">&quot;</span></span> : <span class="string">"使用权人"</span>, <span class="notes">// 人员类型</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">subfloor</span><span class="delimiter">&quot;</span></span> : <span class="string">"2"</span>, <span class="notes">// 楼层</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">submarket</span><span class="delimiter">&quot;</span></span> : <span class="string">"1001"</span>, <span class="notes">// 市场_code</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">submarketStr</span><span class="delimiter">&quot;</span></span> : <span class="string">""</span>, <span class="notes">// 市场</span>
+  	    <span class="key"><span class="delimiter">&quot;</span><span class="content">boothLoanInfoVO</span><span class="delimiter">&quot;</span></span> : {
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">beginusagedate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20160106</span>, <span class="notes">// 协议开始时间</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">endusagedate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20210105</span>, <span class="notes">// 协议结束时间</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothPrice</span><span class="delimiter">&quot;</span></span> : <span class="integer">460000</span>, <span class="notes">// 商位评估价</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">bootharea</span><span class="delimiter">&quot;</span></span> : <span class="integer">7</span>, <span class="notes">// 商位面积(㎡)</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothclass</span><span class="delimiter">&quot;</span></span> : <span class="integer">17</span>, <span class="notes">// 商位类别</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">177007</span>, <span class="notes">// 商位ID</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothmodel</span><span class="delimiter">&quot;</span></span> : <span class="string">""</span>, <span class="notes">// A/B摊(A摊，B摊，/全摊)</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"102440B"</span>, <span class="notes">// 商位号(带A/B摊)</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothusagekind</span><span class="delimiter">&quot;</span></span> : <span class="integer">267</span>, <span class="notes">// 商位使用性质</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">boothusagetype</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// 用房类别</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">creidtscore</span><span class="delimiter">&quot;</span></span> : <span class="string">"30"</span>, <span class="notes">// 信用评分</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">endusetime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20210105</span>, <span class="notes">// 租赁截止日期</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">idcard</span><span class="delimiter">&quot;</span></span> : <span class="string">"330724197611260424"</span>, <span class="notes">// 使用权人身份证号</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">islocked</span><span class="delimiter">&quot;</span></span> : <span class="string">"0"</span>, <span class="notes">// 商位查封状态(0：查封，1：正常，null：正常)</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimit</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// 商位可贷额度(元)</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimitLast</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// 商位剩余可贷额度(元)</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">mname</span><span class="delimiter">&quot;</span></span> : <span class="string">"徐换新"</span>, <span class="notes">// 使用权人姓名</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">mobile</span><span class="delimiter">&quot;</span></span> : <span class="string">"15657930506"</span>, <span class="notes">// 联系电话</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">remark</span><span class="delimiter">&quot;</span></span> : <span class="string">"zy-onccc"</span>, <span class="notes">// 质押查封：zy_test_flag， 拨浪鼓查封：zy-onccc</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">sealbegindate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20170720</span>, <span class="notes">// 商位质押开始时间</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">sealenddate</span><span class="delimiter">&quot;</span></span> : <span class="integer">20180720</span>, <span class="notes">// 商位质押截止日期</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">status</span><span class="delimiter">&quot;</span></span> : <span class="string">"1"</span>, <span class="notes">// 0：空置，1：自营 2：转租</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">subbolck</span><span class="delimiter">&quot;</span></span> : <span class="string">"三单元(459319)"</span>, <span class="notes">// 所在区块</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">subfloor</span><span class="delimiter">&quot;</span></span> : <span class="string">"2"</span>, <span class="notes">// 楼层</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">subindustry</span><span class="delimiter">&quot;</span></span> : <span class="integer">116</span>, <span class="notes">// 所属行业</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">submarket</span><span class="delimiter">&quot;</span></span> : <span class="string">"1001"</span>, <span class="notes">// 所在市场</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">sumrentcount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 出租次数</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">sumrentday</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 合计出租天数</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">sumtransfercount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span><span class="notes">// 转让次数</span>
+          <span class="key"><span class="delimiter">&quot;</span><span class="content">usefee</span><span class="delimiter">&quot;</span></span> : <span class="integer">18116</span><span class="notes">// 价格</span>
+        }
+  	  }
     ]
   }
-}</code></pre> -->
+}</code></pre>
 
                   </div>
                   
@@ -3371,9 +3367,21 @@
               <div class="sect5">
                 <h6 id="_响应_200_4">响应 200</h6>
                 <div class="listingblock">
-                  <div class="content">
-                    <pre
-                      class="CodeRay highlight"><code data-lang="json"><span class="string"><span class="delimiter">&quot;</span><span class="content">object</span><span class="delimiter">&quot;</span></span></code></pre>
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">unLoanList</span><span class="delimiter">&quot;</span></span> : [
+      {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">177007</span>, <span class="notes">// 商位ID</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"102440B"</span>, <span class="notes">// 商位号(带A/B摊)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimit</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// 商位评估价(元)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">boothPrice</span><span class="delimiter">&quot;</span></span> : <span class="integer">460000</span>, <span class="notes">// 商位可贷额度(元)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimitLast</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span> <span class="notes">// 剩余可贷额度(元)</span>
+      }
+    ]
+  }
+}</code></pre>
                   </div>
                 </div>
               </div>
@@ -3449,9 +3457,27 @@
               <div class="sect5">
                 <h6 id="_响应_200_5">响应 200</h6>
                 <div class="listingblock">
-                  <div class="content">
-                    <pre
-                      class="CodeRay highlight"><code data-lang="json"><span class="string"><span class="delimiter">&quot;</span><span class="content">object</span><span class="delimiter">&quot;</span></span></code></pre>
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">mySummary</span><span class="delimiter">&quot;</span></span> : {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2</span>, <span class="notes">// 我的商位</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothPledgedCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 已质押商位</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">handleLoanCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 处理中订单数</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">loanAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 已贷款金额(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">loanCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 贷款笔数</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">nearLoanRepayAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 最近一次还款金额(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">nearLoanRepayTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 最近一次还款时间</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">oldLoanCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 历史订单数</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">repayLoanCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span> <span class="notes">// 还款中的订单数</span>
+    }
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">loanList</span><span class="delimiter">&quot;</span></span> : [
+      {
+      }
+    ]
+  }
+}</code></pre>
                   </div>
                 </div>
               </div>
