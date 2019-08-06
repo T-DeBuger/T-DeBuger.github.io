@@ -3275,13 +3275,21 @@
   <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">notificationList</span><span class="delimiter">&quot;</span></span> : [
       {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span> : <span class="string">"【拨浪鼓】恭喜！您提交的资料已通过银行审核。"</span>, <span class="notes">// 通知内容</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">44</span>, <span class="notes">// 通知ID</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span> : <span class="integer">15657930506</span>, <span class="notes">// 用户ID</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string">"银行面签通知"</span>, <span class="notes">// 标题</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">content</span><span class="delimiter">&quot;</span></span> : <span class="string">"【拨浪鼓】恭喜！您提交的资料已通过银行审核。"</span>, <span class="notes">// 通知内容</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">sendTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20190731162906</span>, <span class="notes">// 通知发送时间</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">sender</span><span class="delimiter">&quot;</span></span> : <span class="string">"系统管理员"</span>, <span class="notes">// 发送者</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">status</span><span class="delimiter">&quot;</span></span> : <span class="string">"0"</span>, <span class="notes">// 是否已读（0：否，1：是）</span>
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string">"银行面签通知"</span>, <span class="notes">// 标题</span>
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">userId</span><span class="delimiter">&quot;</span></span> : <span class="integer">15657930506</span> <span class="notes">// 用户ID</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">step</span><span class="delimiter">&quot;</span></span> : <span class="string">"3"</span> <span class="notes">// 1：最近还款信息提示，
+                        2：本月还款金额，
+                        3：初审通过/不通过，
+                        4：请前往签约、缴费，
+                        5：签约成功，
+                        6：缴费成功，
+                        7：银行放款成功/失败，
+                        8：贷款还清</span>
       }
     ]
   }
@@ -3559,6 +3567,7 @@
   <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">productList</span><span class="delimiter">&quot;</span></span> : [
       {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="string">24</span>, <span class="notes">// 贷款产品ID(productId)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">productName</span><span class="delimiter">&quot;</span></span> : <span class="string">"贷款产品-beta"</span>, <span class="notes">// 贷款产品名称</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">highestAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">9000000</span>, <span class="notes">// 最高可贷金额(分)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">introduce</span><span class="delimiter">&quot;</span></span> : <span class="string">"最新农业银行推出的低利率产品"</span>, <span class="notes">// 贷款产品介绍</span>
