@@ -4058,8 +4058,99 @@
 						<h4 id="_getmoreusingpost">2.5.1. 获取所有贷款产品，包含[常用]和[热门]</h4>
 						<div class="literalblock">
 							<div class="content">
-								<pre><span class="post">POST</span> /app/loanProduct/more</pre>
+								<pre>POST /app/loanProduct/more</pre>
 							</div>
+						</div>
+						<div class="sect4">
+							<h5 id="_参数_6">参数</h5>
+							<table class="tableblock frame-all grid-all spread">
+								<colgroup>
+									<col style="width: 11.1111%;">
+									<col style="width: 16.6666%;">
+									<col style="width: 50%;">
+									<col style="width: 22.2223%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="tableblock halign-left valign-middle">类型</th>
+										<th class="tableblock halign-left valign-middle">名称</th>
+										<th class="tableblock halign-left valign-middle">说明</th>
+										<th class="tableblock halign-left valign-middle">类型</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>FormData</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>lenderCode</strong><br> <em>可选</em>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">银行编码（多个用','隔开）</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">string</p></td>
+									</tr>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>FormData</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>maxRate</strong><br> <em>可选</em>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">最大利率</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">string</p></td>
+									</tr>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>FormData</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>maxTerm</strong><br> <em>可选</em>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">最大期限</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">string</p></td>
+									</tr>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>FormData</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>minRate</strong><br> <em>可选</em>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">最小利率</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">string</p></td>
+									</tr>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>FormData</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>minTerm</strong><br> <em>可选</em>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">最小期限</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">string</p></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 						<div class="sect4">
 							<h5 id="_响应_10">响应</h5>
@@ -4099,17 +4190,6 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>
-						<div class="sect4">
-							<h5 id="_http请求示例_10">HTTP请求示例</h5>
-							<div class="sect5">
-								<h6 id="_请求_path_10">请求 path</h6>
-								<div class="listingblock">
-									<div class="content">
-										<pre>/app/loanProduct/more</pre>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="sect4">
 							<h5 id="_http响应示例_10">HTTP响应示例</h5>
