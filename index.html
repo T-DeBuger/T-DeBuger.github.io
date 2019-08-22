@@ -2851,7 +2851,11 @@
 								<li><a href="#_notificationlistusingpost">2.2.1.
                     获取商位质押政策及消息推送</a></li>
                 <li><a href="#_smsCodeusingpost">2.2.2.
-										获取短信验证码</a></li>
+                    获取短信验证码 [验证预留手机]</a></li>
+                <li><a href="#_smsCode2usingpost">2.2.3.
+                    获取短信验证码 [通用]</a></li>
+                <li><a href="#_verifyusingpost">2.2.4.
+										校验验证码</a></li>
 							</ul></li>
 						<li><a href="#_1309b09a5e540f185518b070bea79d36">2.3.
 								签约管理</a>
@@ -2892,7 +2896,9 @@
 										所有商位贷款信息列表</a></li>
 								<li><a href="#_loandetailusingpost">2.6.5. 单笔贷款详情</a></li>
 								<li><a href="#_payusingpost">2.6.6. 立即缴费</a></li>
-								<li><a href="#_servicesfeeusingpost">2.6.7. 获取商位综合费用</a></li>
+                <li><a href="#_servicesfeeusingpost">2.6.7. 获取商位综合费用</a></li>
+                <li><a href="#_contractusingpost">2.6.8. 获取承诺书地址</a></li>
+								<li><a href="#_contractPassusingpost">2.6.9. 承诺书同意</a></li>
 							</ul></li>
 						<li><a href="#_0a65a4c1fe1052dbce2d52f1ff5e2077">2.7.
 								还款管理</a>
@@ -3316,10 +3322,130 @@
 						</div>
 					</div>
           <div class="sect3">
-            <h4 id="_smsCodeusingpost">2.2.2. 获取短信验证码</h4>
+            <h4 id="_smsCodeusingpost">2.2.2. 获取短信验证码 [验证预留手机]</h4>
             <div class="literalblock">
               <div class="content">
                 <pre><span class="post">POST</span> /app/message/smsCode</pre>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_参数_15">参数</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 11.1111%;">
+                  <col style="width: 16.6666%;">
+                  <col style="width: 50%;">
+                  <col style="width: 22.2223%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                    <th class="tableblock halign-left valign-middle">名称</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>mobile</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">手机号</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>boothid</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">商位ID</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_响应_23">响应</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 10%;">
+                  <col style="width: 70%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">HTTP代码</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>1001</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">服务器内部错误</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">无内容</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>200</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">OK</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">&lt; string, object &gt; map</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_http请求示例_23">HTTP请求示例</h5>
+              <div class="sect5">
+                <h6 id="_请求_path_23">请求 path</h6>
+                <div class="listingblock">
+                  <div class="content">
+                    <pre>/app/message/smsCode</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_http响应示例_23">HTTP响应示例</h5>
+              <div class="sect5">
+                <h6 id="_响应_200_23">响应 200</h6>
+                <div class="listingblock">
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <h4 id="_smsCode2usingpost">2.2.3. 获取短信验证码 [通用]</h4>
+            <div class="literalblock">
+              <div class="content">
+                <pre><span class="post">POST</span> /app/message/smsCode2</pre>
               </div>
             </div>
             <div class="sect4">
@@ -3402,7 +3528,141 @@
                 <h6 id="_请求_path_23">请求 path</h6>
                 <div class="listingblock">
                   <div class="content">
-                    <pre>/app/message/smsCode</pre>
+                    <pre>/app/message/smsCode2</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_http响应示例_23">HTTP响应示例</h5>
+              <div class="sect5">
+                <h6 id="_响应_200_23">响应 200</h6>
+                <div class="listingblock">
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <h4 id="_verifyusingpost">2.2.4. 校验验证码</h4>
+            <div class="literalblock">
+              <div class="content">
+                <pre><span class="post">POST</span> /app/message/verify</pre>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_参数_15">参数</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 11.1111%;">
+                  <col style="width: 16.6666%;">
+                  <col style="width: 50%;">
+                  <col style="width: 22.2223%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                    <th class="tableblock halign-left valign-middle">名称</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>boothid</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">商位ID</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>mobile</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">手机号</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>verifyCode</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">验证码</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_响应_23">响应</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 10%;">
+                  <col style="width: 70%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">HTTP代码</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>1001</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">服务器内部错误</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">无内容</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>200</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">OK</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">&lt; string, object &gt; map</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_http请求示例_23">HTTP请求示例</h5>
+              <div class="sect5">
+                <h6 id="_请求_path_23">请求 path</h6>
+                <div class="listingblock">
+                  <div class="content">
+                    <pre>/app/message/verify</pre>
                   </div>
                 </div>
               </div>
@@ -5776,6 +6036,247 @@
 							</div>
 						</div>
 					</div>
+          <div class="sect3">
+            <h4 id="_contractusingpost">2.6.8. 获取承诺书地址</h4>
+            <div class="literalblock">
+              <div class="content">
+                <pre><span class="post">POST</span> /app/loan/contract</pre>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_参数_12">参数</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 11.1111%;">
+                  <col style="width: 16.6666%;">
+                  <col style="width: 50%;">
+                  <col style="width: 22.2223%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                    <th class="tableblock halign-left valign-middle">名称</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>boothid</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">商位ID</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>mobile</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">接收验证码的手机号</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_响应_19">响应</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 10%;">
+                  <col style="width: 70%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">HTTP代码</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>1001</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">服务器内部错误</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">无内容</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>200</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">OK</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">&lt; string, object &gt; map</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_http请求示例_19">HTTP请求示例</h5>
+              <div class="sect5">
+                <h6 id="_请求_path_19">请求 path</h6>
+                <div class="listingblock">
+                  <div class="content">
+                    <pre>/app/loan/contract</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_http响应示例_19">HTTP响应示例</h5>
+              <div class="sect5">
+                <h6 id="_响应_200_19">响应 200</h6>
+                <div class="listingblock">
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : <span class="string">"承诺书地址"</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <h4 id="_contractPassusingpost">2.6.9. 承诺书同意</h4>
+            <div class="literalblock">
+              <div class="content">
+                <pre><span class="post">POST</span> /app/loan/contractPass</pre>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_参数_12">参数</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 11.1111%;">
+                  <col style="width: 16.6666%;">
+                  <col style="width: 50%;">
+                  <col style="width: 22.2223%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                    <th class="tableblock halign-left valign-middle">名称</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>boothid</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">商位ID</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>FormData</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>mobile</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">接收验证码的手机号</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_响应_19">响应</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 10%;">
+                  <col style="width: 70%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">HTTP代码</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>1001</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">服务器内部错误</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">无内容</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>200</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">OK</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">&lt; string, object &gt; map</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_http请求示例_19">HTTP请求示例</h5>
+              <div class="sect5">
+                <h6 id="_请求_path_19">请求 path</h6>
+                <div class="listingblock">
+                  <div class="content">
+                    <pre>/app/loan/contractPass</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_http响应示例_19">HTTP响应示例</h5>
+              <div class="sect5">
+                <h6 id="_响应_200_19">响应 200</h6>
+                <div class="listingblock">
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 				</div>
 				<div class="sect2">
 					<h3 id="_0a65a4c1fe1052dbce2d52f1ff5e2077">2.7. 还款管理</h3>
