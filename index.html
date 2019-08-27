@@ -2905,8 +2905,8 @@
 							<ul class="sectlevel3">
 								<li><a href="#_lastboothdetailinfosusingpost">2.7.1.
 										获取账号下最近需要还款商位详细信息</a></li>
-								<li><a href="#_repayboothsinfousingpost">2.7.2.
-										获取账号下所有还款商位信息</a></li>
+								<!-- <li><a href="#_repayboothsinfousingpost">2.7.2.
+										获取账号下所有还款商位信息</a></li> -->
 								<li><a href="#_repaydetailusingpost">2.7.3. 获取还款分期明细</a></li>
 							</ul></li>
 						<li><a href="#_3e4445c891d6c88f60a5b633ee232e68">2.8.
@@ -6383,19 +6383,35 @@
 							<div class="sect5">
 								<h6 id="_响应_200_20">响应 200</h6>
 								<div class="listingblock">
-									<div class="content">
-										<pre class="CodeRay highlight">
-											<code data-lang="json">
-												<span class="string"><span class="delimiter">&quot;</span><span
-													class="content">object</span><span class="delimiter">&quot;</span></span>
-											</code>
-										</pre>
+                 <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">repayBoothList</span><span class="delimiter">&quot;</span></span> : [
+      {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">159</span>, <span class="notes">// 贷款ID(productId)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">151894</span>, <span class="notes">// 商位ID</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"48708B"</span>, <span class="notes">// 商位号</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20190921</span>, <span class="notes">// 本次还款日期</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayMethod</span><span class="delimiter">&quot;</span></span> : <span class="integer">4</span>, <span class="notes">// 还款方式</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">productTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">6</span>, <span class="notes">// 贷款总期数</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayInterests</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span>, <span class="notes">// 本次应还利息(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">productName</span><span class="delimiter">&quot;</span></span> : <span class="string">"贷款产品-beta"</span>, <span class="notes">// 贷款产品名称</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span> <span class="notes">// 贷款总金额(分)</span>
+      }
+    ],
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">repayAllBoothInfo</span><span class="delimiter">&quot;</span></span> : {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// 待还款商位数</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span> <span class="notes">// 待还款金额(分)</span>
+    }
+  }
+}</code></pre>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="sect3">
+					<!-- <div class="sect3">
 						<h4 id="_repayboothsinfousingpost">2.7.2. 获取账号下所有还款商位信息</h4>
 						<div class="literalblock">
 							<div class="content">
@@ -6468,7 +6484,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="sect3">
 						<h4 id="_repaydetailusingpost">2.7.3. 获取还款分期明细</h4>
 						<div class="literalblock">
