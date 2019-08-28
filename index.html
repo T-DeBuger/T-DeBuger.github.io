@@ -4587,6 +4587,7 @@
       <span class="key"><span class="delimiter">&quot;</span><span class="content">maxTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">6</span>, <span class="notes">// 最大贷款期限</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">minRate</span><span class="delimiter">&quot;</span></span> : <span class="integer">4.5</span>, <span class="notes">// 最小贷款利率</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span> : <span class="string">"2"</span>, <span class="notes">// 审批方式（1：线上，2：线下）</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span> : <span class="string">"4"</span>, <span class="notes">// 还款方式</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">heat</span><span class="delimiter">&quot;</span></span> : <span class="string">"3"</span> <span class="notes">// 热度（1：热门，2：常用，3：普通）</span>
     }
   ]
@@ -5241,7 +5242,7 @@
       <span class="key"><span class="delimiter">&quot;</span><span class="content">endusetime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20210105</span>, <span class="notes">// 租赁截止日期</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">idcard</span><span class="delimiter">&quot;</span></span> : <span class="string">"330724197611260424"</span>, <span class="notes">// 使用权人身份证号</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">islocked</span><span class="delimiter">&quot;</span></span> : <span class="string">"1"</span>, <span class="notes">// 商位查封状态(null：正常，0：正常，1：查封)</span>
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimit</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// 商位可贷额度(元)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimit</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// 商位可贷额度（建议质押评估价）(元)</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">loanLimitLast</span><span class="delimiter">&quot;</span></span> : <span class="integer">322000</span>, <span class="notes">// 商位剩余可贷额度(元)</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">mname</span><span class="delimiter">&quot;</span></span> : <span class="string">"徐换新"</span>, <span class="notes">// 使用权人姓名</span>
       <span class="key"><span class="delimiter">&quot;</span><span class="content">mobile</span><span class="delimiter">&quot;</span></span> : <span class="string">"15657930506"</span>, <span class="notes">// 联系电话</span>
@@ -6387,6 +6388,10 @@
   <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">repayAllBoothInfo</span><span class="delimiter">&quot;</span></span> : {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// 待还款商位数</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span> <span class="notes">// 待还款金额(分)</span>
+    },
     <span class="key"><span class="delimiter">&quot;</span><span class="content">repayBoothList</span><span class="delimiter">&quot;</span></span> : [
       {
         <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">159</span>, <span class="notes">// 贷款ID(productId)</span>
@@ -6399,11 +6404,7 @@
         <span class="key"><span class="delimiter">&quot;</span><span class="content">productName</span><span class="delimiter">&quot;</span></span> : <span class="string">"贷款产品-beta"</span>, <span class="notes">// 贷款产品名称</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span> <span class="notes">// 贷款总金额(分)</span>
       }
-    ],
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">repayAllBoothInfo</span><span class="delimiter">&quot;</span></span> : {
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// 待还款商位数</span>
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span> <span class="notes">// 待还款金额(分)</span>
-    }
+    ]
   }
 }</code></pre>
 									</div>
@@ -6582,13 +6583,28 @@
 							<div class="sect5">
 								<h6 id="_响应_200_22">响应 200</h6>
 								<div class="listingblock">
-									<div class="content">
-										<pre class="CodeRay highlight">
-											<code data-lang="json">
-												<span class="string"><span class="delimiter">&quot;</span><span
-													class="content">object</span><span class="delimiter">&quot;</span></span>
-											</code>
-										</pre>
+<div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">repayInfo</span><span class="delimiter">&quot;</span></span> : {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">loanNo</span><span class="delimiter">&quot;</span></span> : <span class="string">"DK201908275468"</span>, <span class="notes">// 贷款编号</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">productName</span><span class="delimiter">&quot;</span></span> : <span class="string">"贷款产品-beta"</span>, <span class="notes">// 贷款产品名称</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"48708B"</span>, <span class="notes">// 商位号</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">nowTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 当前还款期数</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">nowRepayTotal</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span>, <span class="notes">// 当前还款总额(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">repayMethod</span><span class="delimiter">&quot;</span></span> : <span class="string">"4"</span>, <span class="notes">// 还款方式</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allRepayInterests</span><span class="delimiter">&quot;</span></span> : <span class="integer">46000</span>, <span class="notes">// 全部还款利息(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allRepayPrincipal</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span> <span class="notes">// 全部还款本金(分)</span>
+    },
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">repayList</span><span class="delimiter">&quot;</span></span> : [
+      {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayInterests</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span>, <span class="notes">// 本次还款利息(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20190921</span> <span class="notes">// 本次还款时间</span>
+      }
+    ]
+  }
+}</code></pre>
 									</div>
 								</div>
 							</div>
