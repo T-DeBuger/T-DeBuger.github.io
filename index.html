@@ -6319,7 +6319,7 @@
 											</p></td>
 										<td class="tableblock halign-left valign-middle"><p
 												class="tableblock">
-												<strong>nearLoanRepayTime</strong><br> <em>必填</em>
+												<strong>nearLoanRepayTime</strong><br> <em>可选</em>
 											</p></td>
 										<td class="tableblock halign-left valign-middle"><p
 												class="tableblock">最近还款日期</p></td>
@@ -6390,19 +6390,25 @@
   <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
     <span class="key"><span class="delimiter">&quot;</span><span class="content">repayAllBoothInfo</span><span class="delimiter">&quot;</span></span> : {
       <span class="key"><span class="delimiter">&quot;</span><span class="content">boothCount</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// 待还款商位数</span>
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span> <span class="notes">// 待还款金额(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span>, <span class="notes">// 待还款总金额(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayPrincipal</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 待还款本金(分)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">allBoothRepayInterests</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span> <span class="notes">// 待还款利息(分)</span>
     },
     <span class="key"><span class="delimiter">&quot;</span><span class="content">repayBoothList</span><span class="delimiter">&quot;</span></span> : [
       {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">159</span>, <span class="notes">// 贷款ID(productId)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">151894</span>, <span class="notes">// 商位ID</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"48708B"</span>, <span class="notes">// 商位号</span>
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20190921</span>, <span class="notes">// 本次还款日期</span>
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayMethod</span><span class="delimiter">&quot;</span></span> : <span class="integer">4</span>, <span class="notes">// 还款方式</span>
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">productTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">6</span>, <span class="notes">// 贷款总期数</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">nowTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>, <span class="notes">// 本次贷款当前期数</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">productTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">6</span>, <span class="notes">// 本次贷款总期数</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20190921</span>, <span class="notes">// 本次还款日期(还款日)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayPrincipal</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>, <span class="notes">// 本次应还本金(分)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">repayInterests</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span>, <span class="notes">// 本次应还利息(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayTotal</span><span class="delimiter">&quot;</span></span> : <span class="integer">6250</span>, <span class="notes">// 本次应还合计(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">159</span>, <span class="notes">// 贷款ID(productId)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">productName</span><span class="delimiter">&quot;</span></span> : <span class="string">"贷款产品-beta"</span>, <span class="notes">// 贷款产品名称</span>
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span> <span class="notes">// 贷款总金额(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">repayMethod</span><span class="delimiter">&quot;</span></span> : <span class="integer">4</span>, <span class="notes">// 还款方式</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span>, <span class="notes">// 贷款总金额(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalInterests</span><span class="delimiter">&quot;</span></span> : <span class="integer">500000</span> <span class="notes">// 贷款总利息(分)</span>
       }
     ]
   }
