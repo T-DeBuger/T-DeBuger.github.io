@@ -2881,6 +2881,7 @@
                 <li><a href="#_servicesfeeusingpost">2.6.7. 获取商位综合费用</a></li>
                 <li><a href="#_contractusingpost">2.6.8. 获取承诺书地址</a></li>
 								<li><a href="#_contractPassusingpost">2.6.9. 承诺书同意</a></li>
+								<li><a href="#_oldLoanRecordusingpost">2.6.10. 获取历史记录</a></li>
 							</ul></li>
 						<li><a href="#_0a65a4c1fe1052dbce2d52f1ff5e2077">2.7. 还款管理</a>
 							<ul class="sectlevel3">
@@ -4395,6 +4396,7 @@
         <span class="key"><span class="delimiter">&quot;</span><span class="content">loanNo</span><span class="delimiter">&quot;</span></span> : <span class="string">"DK201908063242"</span>, <span class="notes">// 贷款编号</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">productTerm</span><span class="delimiter">&quot;</span></span> : <span class="integer">6</span>, <span class="notes">// 贷款期数</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">applyAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span>, <span class="notes">// 申请贷款金额(分)</span>
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">2000000</span>, <span class="notes">// 实际放款金额(分)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">productType</span><span class="delimiter">&quot;</span></span> : <span class="string">"2"</span>, <span class="notes">// 审批方式(1：线上，2：线下)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">lastRepayTime</span><span class="delimiter">&quot;</span></span> : <span class="integer">20200922</span>, <span class="notes">// 最终还款期限(超期即逾期)</span>
         <span class="key"><span class="delimiter">&quot;</span><span class="content">status</span><span class="delimiter">&quot;</span></span> : <span class="string">"BANK_ACCEPT_YES"</span>, <span class="notes">// 贷款状态 (<a href="#_basicsinfousingpost">参考 2.4.2 状态表</a>)</span>
@@ -6283,6 +6285,87 @@
               </div>
             </div>
           </div>
+	        <div class="sect3">
+	          <h4 id="_oldLoanRecordusingpost">2.6.10. 获取历史记录</h4>
+	          <div class="literalblock">
+	            <div class="content">
+	              <pre><span class="post">POST</span> /app/loan/oldLoanRecord</pre>
+	            </div>
+	          </div>
+	          <div class="sect4">
+	            <h5 id="_响应_19">响应</h5>
+	            <table class="tableblock frame-all grid-all spread">
+	              <colgroup>
+	                <col style="width: 10%;">
+	                <col style="width: 70%;">
+	                <col style="width: 20%;">
+	              </colgroup>
+	              <thead>
+	                <tr>
+	                  <th class="tableblock halign-left valign-middle">HTTP代码</th>
+	                  <th class="tableblock halign-left valign-middle">说明</th>
+	                  <th class="tableblock halign-left valign-middle">类型</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr>
+	                  <td class="tableblock halign-left valign-middle"><p
+	                      class="tableblock">
+	                      <strong>1001</strong>
+	                    </p></td>
+	                  <td class="tableblock halign-left valign-middle"><p
+	                      class="tableblock">服务器内部错误</p></td>
+	                  <td class="tableblock halign-left valign-middle"><p
+	                      class="tableblock">无内容</p></td>
+	                </tr>
+	                <tr>
+	                  <td class="tableblock halign-left valign-middle"><p
+	                      class="tableblock">
+	                      <strong>200</strong>
+	                    </p></td>
+	                  <td class="tableblock halign-left valign-middle"><p
+	                      class="tableblock">OK</p></td>
+	                  <td class="tableblock halign-left valign-middle"><p
+	                      class="tableblock">&lt; string, object &gt; map</p></td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	          <div class="sect4">
+	            <h5 id="_http请求示例_19">HTTP请求示例</h5>
+	            <div class="sect5">
+	              <h6 id="_请求_path_19">请求 path</h6>
+	              <div class="listingblock">
+	                <div class="content">
+	                  <pre>/app/loan/oldLoanRecord</pre>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="sect4">
+	            <h5 id="_http响应示例_19">HTTP响应示例</h5>
+	            <div class="sect5">
+	              <h6 id="_响应_200_19">响应 200</h6>
+	              <div class="listingblock">
+	                <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : [
+    {
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">51</span>, <span class="notes">// 贷款ID</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothno</span><span class="delimiter">&quot;</span></span> : <span class="string">"48708B"</span>, <span class="notes">// 商位号</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">boothid</span><span class="delimiter">&quot;</span></span> : <span class="integer">177007</span>, <span class="notes">// 商位ID</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">loanNo</span><span class="delimiter">&quot;</span></span> : <span class="string">"DK201908063242"</span>, <span class="notes">// 贷款编号</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">status</span><span class="delimiter">&quot;</span></span> : <span class="string">"REPAYMENT_YES"</span>, <span class="notes">// 贷款状态 (<a href="#_basicsinfousingpost">参考 2.4.2 状态表</a>)</span>
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">acturalAmount</span><span class="delimiter">&quot;</span></span> : <span class="integer">3000000</span> <span class="notes">// 贷款金额(分)</span>
+    }
+  ]
+}</code></pre>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
 				</div>
 				<div class="sect2">
 					<h3 id="_0a65a4c1fe1052dbce2d52f1ff5e2077">2.7. 还款管理</h3>
