@@ -2862,6 +2862,7 @@
 							<ul class="sectlevel3">
 								<li><a href="#_noloanboothsinfousingpost">2.4.1. 菜单栏 [申请贷款]</a></li>
 								<li><a href="#_basicsinfousingpost">2.4.2. 菜单栏 [我的]</a></li>
+								<li><a href="#_picsusingpost">2.4.3. 加载图片</a></li>
 							</ul></li>
 						<li><a href="#_0c1e75f244afb108dbbd42cb8710801f">2.5. 贷款产品管理</a>
 							<ul class="sectlevel3">
@@ -4423,6 +4424,88 @@
 | OVERDUE_REPAYMENT_YES	| 逾期还款	        | 已还款	                        | 查看详情 |
 ---------------------------------------------------------------------------------------
 </span>
+</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sect3">
+						<h4 id="_picsusingpost">2.4.3. 加载图片</h4>
+						<div class="literalblock">
+							<div class="content">
+								<pre><span class="post">POST</span> /app/meunBar/pics</pre>
+							</div>
+						</div>
+						<div class="sect4">
+							<h5 id="_说明_3">说明</h5>
+							<div class="paragraph">
+								<p>获取首页固定图片</p>
+							</div>
+						</div>
+						<div class="sect4">
+							<h5 id="_响应_9">响应</h5>
+							<table class="tableblock frame-all grid-all spread">
+								<colgroup>
+									<col style="width: 10%;">
+									<col style="width: 70%;">
+									<col style="width: 20%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="tableblock halign-left valign-middle">HTTP代码</th>
+										<th class="tableblock halign-left valign-middle">说明</th>
+										<th class="tableblock halign-left valign-middle">类型</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>1001</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">服务器内部错误</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">无内容</p></td>
+									</tr>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>200</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">OK</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">&lt; string, object &gt; map</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="sect4">
+							<h5 id="_http请求示例_9">HTTP请求示例</h5>
+							<div class="sect5">
+								<h6 id="_请求_path_9">请求 path</h6>
+								<div class="listingblock">
+									<div class="content">
+										<pre>/app/meunBar/pics</pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sect4">
+							<h5 id="_http响应示例_9">HTTP响应示例</h5>
+							<div class="sect5">
+								<h6 id="_响应_200_9">响应 200</h6>
+								<div class="listingblock">
+									<div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : {
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">headPic</span><span class="delimiter">&quot;</span></span> : <span class="string">"http://onccc.oss-cn-hangzhou.aliyuncs.com/newLoan1567731985545.jpg"</span>, <span class="notes">// 首页顶部图片</span>
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">footPic</span><span class="delimiter">&quot;</span></span> : <span class="string">"http://onccc.oss-cn-hangzhou.aliyuncs.com/newLoan1567731766736.jpg"</span> <span class="notes">// 首页尾部图片</span>
+  }
+}
 </code></pre>
 									</div>
 								</div>
