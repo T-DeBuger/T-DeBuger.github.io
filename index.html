@@ -2898,6 +2898,7 @@
 								<li><a href="#_deletebankcardusingpost">2.8.4. 解绑银行卡</a></li>
 								<li><a href="#_listusingpost">2.8.5. 获取账户下的所有银行卡</a></li>
 								<li><a href="#_savedefaultusingpost">2.8.6. 设置默认银行卡</a></li>
+								<li><a href="#_bankOCRusingpost">2.8.7. 拍照识别银行卡</a></li>
 							</ul></li>
 					</ul></li>
 				<li><a href="#_securityscheme">3. 安全</a>
@@ -7429,6 +7430,113 @@
 									<div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
   <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
   <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>
+}</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sect3">
+						<h4 id="_bankOCRusingpost">2.8.7. 拍照识别银行卡</h4>
+						<div class="literalblock">
+							<div class="content">
+								<pre><span class="post">POST</span> /app/accountInfo/bankOCR</pre>
+							</div>
+						</div>
+						<div class="sect4">
+							<h5 id="_参数_18">参数</h5>
+							<table class="tableblock frame-all grid-all spread">
+								<colgroup>
+									<col style="width: 11.1111%;">
+									<col style="width: 16.6666%;">
+									<col style="width: 50%;">
+									<col style="width: 22.2223%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="tableblock halign-left valign-middle">类型</th>
+										<th class="tableblock halign-left valign-middle">名称</th>
+										<th class="tableblock halign-left valign-middle">说明</th>
+										<th class="tableblock halign-left valign-middle">类型</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>JSON</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>base64</strong><br> <em>必填</em>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">图片 base64 数据</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">string</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="sect4">
+							<h5 id="_响应_28">响应</h5>
+							<table class="tableblock frame-all grid-all spread">
+								<colgroup>
+									<col style="width: 10%;">
+									<col style="width: 70%;">
+									<col style="width: 20%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="tableblock halign-left valign-middle">HTTP代码</th>
+										<th class="tableblock halign-left valign-middle">说明</th>
+										<th class="tableblock halign-left valign-middle">类型</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>1001</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">服务器内部错误</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">无内容</p></td>
+									</tr>
+									<tr>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">
+												<strong>200</strong>
+											</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">OK</p></td>
+										<td class="tableblock halign-left valign-middle"><p
+												class="tableblock">&lt; string, object &gt; map</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="sect4">
+							<h5 id="_http请求示例_28">HTTP请求示例</h5>
+							<div class="sect5">
+								<h6 id="_请求_path_28">请求 path</h6>
+								<div class="listingblock">
+									<div class="content">
+										<pre>/app/accountInfo/bankOCR</pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sect4">
+							<h5 id="_http响应示例_28">HTTP响应示例</h5>
+							<div class="sect5">
+								<h6 id="_响应_200_28">响应 200</h6>
+								<div class="listingblock">
+									<div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : <span class="string">"6227002470170278192"</span> <span class="notes">// 银行卡号</span>
 }</code></pre>
 									</div>
 								</div>
