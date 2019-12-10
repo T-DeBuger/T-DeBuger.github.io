@@ -2857,6 +2857,7 @@
 								<li><a href="#_contractpreviewusingpost">2.3.2. 协议书预览</a></li>
 								<li><a href="#_contractsignusingpost">2.3.3. 立即签约[乙方] - 获取签约地址</a></li>
 								<li><a href="#_registuserusingpost">2.3.4. 注册用户身份信息</a></li>
+                <li><a href="#_checkloanmerchantinfousingpost">2.3.5. 校验使用权人身份证有效性</a></li>
 							</ul></li>
 						<li><a href="#_f3fba103814817098c33910400b2982d">2.4. 菜单栏管理</a>
 							<ul class="sectlevel3">
@@ -4210,6 +4211,137 @@
 							</div>
 						</div>
 					</div>
+          <div class="sect3">
+            <h4 id="_checkloanmerchantinfousingpost">2.3.5. 校验使用权人身份证有效性</h4>
+            <div class="literalblock">
+              <div class="content">
+                <pre><span class="post">POST</span> /app/sign/checkLoanMerchantInfo</pre>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_参数_5">参数</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 11.1111%;">
+                  <col style="width: 16.6666%;">
+                  <col style="width: 50%;">
+                  <col style="width: 22.2223%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                    <th class="tableblock halign-left valign-middle">名称</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>JSON</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>loanId</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">贷款ID</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>JSON</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>idCard</strong><br> <em>必填</em>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">待验证身份证号</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">string</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_响应_7">响应</h5>
+              <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                  <col style="width: 10%;">
+                  <col style="width: 70%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="tableblock halign-left valign-middle">HTTP代码</th>
+                    <th class="tableblock halign-left valign-middle">说明</th>
+                    <th class="tableblock halign-left valign-middle">类型</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>1001</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">服务器内部错误</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">无内容</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>1002</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">未登录或登录过期</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">无内容</p></td>
+                  </tr>
+                  <tr>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">
+                        <strong>200</strong>
+                      </p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">OK</p></td>
+                    <td class="tableblock halign-left valign-middle"><p
+                        class="tableblock">&lt; string, object &gt; map</p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sect4">
+              <h5 id="_http请求示例_7">HTTP请求示例</h5>
+              <div class="sect5">
+                <h6 id="_请求_path_7">请求 path</h6>
+                <div class="listingblock">
+                  <div class="content">
+                    <pre>/app/sign/checkLoanMerchantInfo</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sect4">
+              <h5 id="_http响应示例_7">HTTP响应示例</h5>
+              <div class="sect5">
+                <h6 id="_响应_200_7">响应 200</h6>
+                <div class="listingblock">
+                  <div class="content"><pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span> : <span class="string">"OK"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">code</span><span class="delimiter">&quot;</span></span> : <span class="string">"200"</span>,
+  <span class="key"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span> : <span class="integer">true</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 				</div>
 				<div class="sect2">
 					<h3 id="_f3fba103814817098c33910400b2982d">2.4. 菜单栏管理</h3>
