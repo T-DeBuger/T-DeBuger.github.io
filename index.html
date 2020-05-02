@@ -2949,6 +2949,13 @@
 | PAY_NO	 |  未付款  |
 | PAY_YES	 |  已付款  |
 ------------------------
+停车场状态表(parkingStatus)：
+------------------------
+| 状态       | 状态意义  |
+------------------------
+| EFFECTIVE |   有效   |
+| FAILURE   |   失效   |
+------------------------
 
 流程：
 1.发起申请->审核中->审核不通过->重新申请
@@ -3101,7 +3108,7 @@
 		    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingPrice</span><span class="delimiter">&quot;</span></span> : <span class="integer">1000</span>, <span class="notes">// 泊车位价格(单位：元)</span>
 		    <span class="key"><span class="delimiter">&quot;</span><span class="content">checkNo</span><span class="delimiter">&quot;</span></span> : <span class="string">"1,37,86"</span>, <span class="notes">// 中签号</span>
 		    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingName</span><span class="delimiter">&quot;</span></span> : <span class="string">"一区地下泊位(2020)"</span>, <span class="notes">// 停车场名称</span>
-		    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingStatus</span><span class="delimiter">&quot;</span></span> : <span class="string">"EFFECTIVE"</span>, <span class="notes">// 状态</span>
+		    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingStatus</span><span class="delimiter">&quot;</span></span> : <span class="string">"EFFECTIVE"</span>, <span class="notes">// 状态(有效:EFFECTIVE，失效:FAILURE)</span>
 		    <span class="key"><span class="delimiter">&quot;</span><span class="content">isLot</span><span class="delimiter">&quot;</span></span> : <span class="string">"Y"</span>, <span class="notes">// 是否摇号</span>
 		    <span class="key"><span class="delimiter">&quot;</span><span class="content">isBooth</span><span class="delimiter">&quot;</span></span> : <span class="string">"N"</span>, <span class="notes">// 是否商位唯一</span>
 		    <span class="key"><span class="delimiter">&quot;</span><span class="content">isBlock</span><span class="delimiter">&quot;</span></span> : <span class="string">"N"</span>, <span class="notes">// 是否跨区块</span>
@@ -3218,7 +3225,7 @@
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingPrice</span><span class="delimiter">&quot;</span></span> : <span class="integer">1000</span>, <span class="notes">// 泊车位价格(单位：元)</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">checkNo</span><span class="delimiter">&quot;</span></span> : <span class="string">"1,37,86"</span>, <span class="notes">// 中签号</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingName</span><span class="delimiter">&quot;</span></span> : <span class="string">"一区地下泊位(2020)"</span>, <span class="notes">// 停车场名称</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingStatus</span><span class="delimiter">&quot;</span></span> : <span class="string">"EFFECTIVE"</span>, <span class="notes">// 状态</span>
+	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingStatus</span><span class="delimiter">&quot;</span></span> : <span class="string">"EFFECTIVE"</span>, <span class="notes">// 状态(有效:EFFECTIVE，失效:FAILURE)</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">isLot</span><span class="delimiter">&quot;</span></span> : <span class="string">"Y"</span>, <span class="notes">// 是否摇号</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">isBooth</span><span class="delimiter">&quot;</span></span> : <span class="string">"N"</span>, <span class="notes">// 是否商位唯一</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">isBlock</span><span class="delimiter">&quot;</span></span> : <span class="string">"N"</span>, <span class="notes">// 是否跨区块</span>
@@ -3855,7 +3862,7 @@
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingPrice</span><span class="delimiter">&quot;</span></span> : <span class="integer">1000</span>, <span class="notes">// 泊车位价格(单位：元)</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">checkNo</span><span class="delimiter">&quot;</span></span> : <span class="string">"1,37,86"</span>, <span class="notes">// 中签号</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingName</span><span class="delimiter">&quot;</span></span> : <span class="string">"一区地下泊位(2020)"</span>, <span class="notes">// 停车场名称</span>
-	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingStatus</span><span class="delimiter">&quot;</span></span> : <span class="string">"EFFECTIVE"</span>, <span class="notes">// 状态</span>
+	    <span class="key"><span class="delimiter">&quot;</span><span class="content">parkingStatus</span><span class="delimiter">&quot;</span></span> : <span class="string">"EFFECTIVE"</span>, <span class="notes">// 状态(有效:EFFECTIVE，失效:FAILURE)</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">isLot</span><span class="delimiter">&quot;</span></span> : <span class="string">"Y"</span>, <span class="notes">// 是否摇号</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">isBooth</span><span class="delimiter">&quot;</span></span> : <span class="string">"N"</span>, <span class="notes">// 是否商位唯一</span>
 	    <span class="key"><span class="delimiter">&quot;</span><span class="content">isBlock</span><span class="delimiter">&quot;</span></span> : <span class="string">"N"</span>, <span class="notes">// 是否跨区块</span>
